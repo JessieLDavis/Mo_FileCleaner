@@ -18,7 +18,9 @@ rhinoPath = "" #The default path for "MegaDive" to move .3dm files (Rhinocerous3
 
 fileTrash = "" #The default path for "CheckFolderContents" to move the file to if confirmed.
 
-#STEP 2: Automatically creates a list of all the file names within the source file. A copy of this list will be iterated over.
+#If wanting to test, uncomment the next line. Caution! There is no reset.
+# sourceFile, destinationFile, problemDiving, pdfPath, picPath, vidPath, psdPath, stlPath, rhinoPath, fileTrash = "Test_Example/sourceFile","Test_Example/destinationFile","Test_Example/problemDiving","Test_Example/pdfPath","Test_Example/picPath","Test_Example/vidPath","Test_Example/psdPath","Test_Example/stlPath","Test_Example/rhinoPath","Test_Example/fileTrash"
+
 fileList = [folder for folder in os.listdir(sourceFile)]
 
 def musicDive(fileList,sourceFile):
@@ -325,7 +327,7 @@ def runSearch(fileList,choice): #Not fully tested
         choice = input("Please choose a program to run. \n1 = musicDive\n2 = megaDive\n3 = checkFolderContents\n4 = Quit\n>  ")
         return runSearch(fileList,choice)
 
-
+#STEP 2: Run File
 if __name__ is "__main__": #Not fully tested
     confirmGo = input("Please confirm that all file locations match expectations. If needed restart. \nOtherwise press enter to continue.")
     choice = input("Please choose a program to run. \n1 = musicDive\n2 = megaDive\n3 = checkFolderContents\n4 = Quit\n>  ")
